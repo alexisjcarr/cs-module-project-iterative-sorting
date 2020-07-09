@@ -9,8 +9,8 @@ def binary_search(arr, target):
     start = 0
     end = (len(arr) - 1)
 
-    found = False
-    while end >= start and not found: 
+    found = -1
+    while end >= start and found == -1: 
         # get the middle point
         middle_index = (start + end) // 2 
         # compare the value in the middle with target
@@ -23,4 +23,4 @@ def binary_search(arr, target):
                 end = middle_index - 1
             if target > arr[middle_index]:
                 start = middle_index + 1
-    return -1 if found is False else found
+    return found
